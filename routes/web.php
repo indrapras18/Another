@@ -24,3 +24,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/info', [App\Http\Controllers\KomentarController::class, 'info'])->name('info');
+
+Route::get('/dashboard', [App\Http\Controllers\KomentarController::class, 'dashboard'])->name('dashboard');
+
+Route::get('/features', [App\Http\Controllers\KomentarController::class, 'features'])->name('features');

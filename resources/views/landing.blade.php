@@ -45,7 +45,7 @@
             tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
             quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
             consequat. Duis aute irure dolor in</p>
-            <p><a href="" class="tbl-biru2">More Courses</a></p>
+            <p><a href="/features" class="tbl-biru2">More Courses</a></p>
         </div>
         <img src="https://img.freepik.com/free-vector/programming-concept-illustration_114360-1351.jpg?w=740&t=st=1658925870~exp=1658926470~hmac=8b392c8656e275731a6ee5542889edd84aa22df20708536d444223604e02dd0f">
     </section>
@@ -57,7 +57,7 @@
             <label for="">Email</label><br>
             <input type="email" name="email" id="" placeholder="input your email here"><br>
             <label for="">Coment</label><br>
-            <textarea name="kometar" placeholder="input your email here"></textarea><br>
+            <textarea name="kometar" placeholder="input your coment here"></textarea><br>
             <button type="submit">Post</button>
         </form>
     </section>

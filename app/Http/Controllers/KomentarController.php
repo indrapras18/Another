@@ -21,4 +21,12 @@ class KomentarController extends Controller
     public function info(){
         return view('info');
     }
+
+    public function dashboard(){
+        return view('dashboard');
+    }
+
+    public function features(){
+        return view('features');
+    }
 }
