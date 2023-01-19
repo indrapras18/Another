@@ -28,3 +28,5 @@ Route::get('/info', [App\Http\Controllers\KomentarController::class, 'info'])->n
 Route::get('/dashboard', [App\Http\Controllers\KomentarController::class, 'dashboard'])->name('dashboard');
 
 Route::get('/features', [App\Http\Controllers\KomentarController::class, 'features'])->name('features');
+
+Route::get('/landing', [App\Http\Controllers\KomentarController::class, 'landing'])->name('landing');

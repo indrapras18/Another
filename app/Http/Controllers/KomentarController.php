@@ -15,7 +15,7 @@ class KomentarController extends Controller
 
     public function tambah(Request $request){
         Komentar::create($request->all());
-        return redirect()->route('/');
+        return redirect()->route('landing');
     }
 
     public function info(){
@@ -28,5 +28,9 @@ class KomentarController extends Controller
 
     public function features(){
         return view('features');
+    }
+
+    public function landing(){
+        return view('landing');
     }
 }
