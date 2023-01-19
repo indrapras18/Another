@@ -2,6 +2,9 @@
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KomentarController;
+use App\Http\Controllers\InformasiController;
+use App\Models\Informasi;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,3 +33,7 @@ Route::get('/dashboard', [App\Http\Controllers\KomentarController::class, 'dashb
 Route::get('/features', [App\Http\Controllers\KomentarController::class, 'features'])->name('features');
 
 Route::get('/landing', [App\Http\Controllers\KomentarController::class, 'landing'])->name('landing');
+
+Route::get('/informasi', [App\Http\Controllers\InformasiController::class, 'informasi'])->name('informasi');
+
+Route::post('/add',[InformasiController::class, 'add'])->name('add');

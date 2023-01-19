@@ -35,37 +35,12 @@
         <header id="page-topbar">
             <div class="navbar-header">
                 <div class="d-flex">
-                    <!-- LOGO -->
-                    <div class="navbar-brand-box">
-                        <a href="../../index.php" class="logo logo-dark">
-                            <span class="logo-sm">
-                                <img src="../../img/logo.png" alt="" height="22">
-                            </span>
-                            <span class="logo-lg">
-                                <img src="../../img/logo.png" alt="" height="20">
-                            </span>
-                        </a>
-
-                        <a href="../../index.php" class="logo logo-light">
-                            <span class="logo-sm">
-                                <img src="../../img/logo.png" alt="" height="22">
-                            </span>
-                            <span class="logo-lg" style="color:white; font-size:19px;">
-                                <img src="../../img/logoWhite.png" alt="" height="30">
-                                <strong>HealthCare</strong>
-                            </span>
-                        </a>
-                    </div>
-
-                    <button type="button" class="btn btn-sm px-3 font-size-24 header-item waves-effect" id="vertical-menu-btn">
-                        <i class="mdi mdi-menu"></i>
-                    </button>
-
                     <div class="d-none d-sm-block ms-2">
                         <h4 class="page-title font-size-18">Dashboard</h4>
                     </div>
-
                 </div>
+
+                <button style="margin-left: 91%" type="button" class="btn btn-success"><a style="color: white; text-decoration: none;" href="/informasi">Add Info</a></button>
                 <!-- Search input -->
                 <div class="d-flex">
                     <div class="dropdown d-none d-lg-inline-block">
@@ -74,80 +49,29 @@
                         </button>
                     </div>
 
-                    <div class="dropdown d-inline-block ms-2">
-                        <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            {{-- <img class="rounded-circle header-profile-user" <?php echo "<img src='gambar/$rows[foto]'/>"; ?> </button> --}}
-                            <div class="dropdown-menu dropdown-menu-end">
-                                <!-- item-->
-                                <a class="dropdown-item" href="profile_admin.php"><i class="dripicons-user font-size-16 align-middle me-2"></i>
-                                    Profile</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="layout/logout.php"><i class="dripicons-exit font-size-16 align-middle me-2"></i>
-                                    Logout</a>
-                            </div>
-                    </div>
-
                     <div class="dropdown d-inline-block">
                         <button type="button" class="btn header-item noti-icon right-bar-toggle waves-effect">
                             <i class="mdi mdi-spin mdi-cog"></i>
                         </button>
                     </div>
-
                 </div>
             </div>
         </header>
-
-        <!-- ========== Left Sidebar Start ========== -->
         <div class="vertical-menu">
 
             <div data-simplebar class="h-100">
-
-                <!--- Sidemenu -->
-                <div id="sidebar-menu">
-                    <!-- Left Menu Start -->
-                    <ul class="metismenu list-unstyled" id="side-menu">
-                        <li class="menu-title">Main</li>
-
-                        <li>
-                            <a href="dashboard.php" class="waves-effect">
-                                <i class="dripicons-device-desktop"></i>
-                                <span>Dashboard</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                <i class="dripicons-list"></i>
-                                <span> Tables </span>
-                            </a>
-                            <ul class="sub-menu" aria-expanded="false">
-                                <li><a href="tables-tenaga-medis.php"><i class="dripicons-user-group"></i>Tenaga Medis</a></li>
-                                <li><a href="tables-poli.php"><i class="dripicons-medical"></i>Poli</a></li>
-                                <li><a href="tables-pasien.php"><i class="dripicons-user"></i>Pasien</a></li>
-                                <li><a href="tables-jadwal.php"><i class="dripicons-to-do"></i>Jadwal</a></li>
-                                <li><a href="tables-detail.php"><i class="dripicons-lightbulb"></i>Detail</a></li>
-                                <li><a href="tables-faq.php"><i class="dripicons-lightbulb"></i>FAQ</a></li>
-                            </ul>
-                        </li>
-
-                    </ul>
-                </div>
-                <!-- Sidebar -->
             </div>
         </div>
-        <!-- Left Sidebar End -->
-
-        <!-- ============================================================== -->
-        <!-- Start right Content here -->
-        <!-- ============================================================== -->
         <div class="main-content">
             <div class="page-content">
                 <div class="container-fluid">
-                    <div class="row">
+                    <div class="row pb-5" >
                         <div class="col-md-6 col-xl-3">
                             <div class="card text-center" style="background-color:#FFB167; border-radius:10px;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-info mt-2">
-                                    </h3> <strong style="color: white;">Tenaga Medis</strong>
+                                    </h3> <strong style="color: white;">Users</strong><br>
+                                    <strong style="color: white">{{ $users }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -155,7 +79,8 @@
                             <div class="card text-center" style="background-color:#3991E1;  border-radius:10px;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-purple mt-2">
-                                    </h3> <strong style="color: white;">Poli</strong>
+                                    </h3> <strong style="color: white;">comment</strong><br>
+                                    <strong style="color: white">{{ $komen }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -163,7 +88,8 @@
                             <div class="card text-center" style="background-color:#EF716B; border-radius:10px;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-primary mt-2">
-                                    </h3> <strong style="color: white;">Pasien</strong>
+                                    </h3> <strong style="color: white;">data information</strong><br>
+                                    <strong style="color: white">{{ $inpo }}</strong>
                                 </div>
                             </div>
                         </div>
@@ -171,10 +97,14 @@
                             <div class="card text-center" style="background-color: #0AB885; border-radius:10px;">
                                 <div class="mb-2 card-body text-muted">
                                     <h3 class="text-danger mt-2">
-                                    </h3> <strong style="color: white;">Admin</strong>
+                                    </h3> <strong style="color: white;">Admin</strong><br>
+                                    <strong style="color: white">4</strong>
                                 </div>
                             </div>
                         </div>
+                        <div class="container mt-5">
+                            <p>Admin : {{ Auth::user()->email }}</p>
+                          </div>
                     </div>
                     <!-- end row -->
 
@@ -203,26 +133,13 @@
                                         new Chart(ctx, {
                                             type: 'bar',
                                             data: {
-                                                labels: ['tenaga Medis', 'Poli', 'Pasien', 'Admin'],
+                                                labels: ['Users', 'Komen', '', 'Admin'],
                                                 datasets: [{
                                                     label: '',
                                                     data: [
-                                                        // <?php
-                                                        // $jumlah_teknik = mysqli_query($koneksi, "select * from tenaga_medis");
-                                                        // echo mysqli_num_rows($jumlah_teknik);
-                                                        // ?>,
-                                                        // <?php
-                                                        // $jumlah_teknik = mysqli_query($koneksi, "select * from poli");
-                                                        // echo mysqli_num_rows($jumlah_teknik);
-                                                        // ?>,
-                                                        // <?php
-                                                        // $jumlah_teknik = mysqli_query($koneksi, "select * from pasien");
-                                                        // echo mysqli_num_rows($jumlah_teknik);
-                                                        // ?>,
-                                                        // <?php
-                                                        // $jumlah_teknik = mysqli_query($koneksi, "select * from login_admin");
-                                                        // echo mysqli_num_rows($jumlah_teknik);
-                                                        // ?>,
+                                                        {{ $users }},
+                                                        {{ $komen }},
+                                                        {{ $inpo }}
                                                     ],
                                                     backgroundColor: [
                                                         'rgba(255, 99, 132, 0.2)',
@@ -271,68 +188,8 @@
                 </div>
             </footer>
         </div>
-        <!-- end main content-->
-
     </div>
-    <!-- END layout-wrapper -->
-
-    <!-- Right Sidebar -->
-    <div class="right-bar">
-        <div data-simplebar class="h-100">
-            <div class="rightbar-title px-3 py-4">
-                <a href="javascript:void(0);" class="right-bar-toggle float-end">
-                    <i class="mdi mdi-close noti-icon"></i>
-                </a>
-                <h5 class="m-0">Settings</h5>
-            </div>
-
-            <!-- Settings -->
-            <hr class="mt-0" />
-            <div class="p-4">
-                <h6 class="mt-4">Select Custom Colors</h6>
-                <div class="d-flex">
-
-                    <ul class="list-unstyled mb-0">
-                        <li class="form-check">
-                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-default" value="default" onchange="document.documentElement.setAttribute('data-theme-mode', 'default')" checked>
-                            <label class="form-check-label" for="theme-default">Default</label>
-                        </li>
-                        <li class="form-check">
-                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-orange" value="orange" onchange="document.documentElement.setAttribute('data-theme-mode', 'orange')">
-                            <label class="form-check-label" for="theme-orange">Orange</label>
-                        </li>
-                        <li class="form-check">
-                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-teal" value="teal" onchange="document.documentElement.setAttribute('data-theme-mode', 'teal')">
-                            <label class="form-check-label" for="theme-teal">Teal</label>
-                        </li>
-                    </ul>
-
-                    <ul class="list-unstyled mb-0 ms-4">
-                        <li class="form-check">
-                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-purple" value="purple" onchange="document.documentElement.setAttribute('data-theme-mode', 'purple')">
-                            <label class="form-check-label" for="theme-purple">Purple</label>
-                        </li>
-                        <li class="form-check">
-                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-green" value="green" onchange="document.documentElement.setAttribute('data-theme-mode', 'green')">
-                            <label class="form-check-label" for="theme-green">Green</label>
-                        </li>
-                        <li class="form-check">
-                            <input class="form-check-input theme-color" type="radio" name="theme-mode" id="theme-red" value="red" onchange="document.documentElement.setAttribute('data-theme-mode', 'red')">
-                            <label class="form-check-label" for="theme-red">Red</label>
-                        </li>
-                    </ul>
-
-                </div>
-            </div>
-
-        </div>
-        <!-- end slimscroll-menu-->
-    </div>
-    <!-- /Right-bar -->
-
-    <!-- Right bar overlay-->
     <div class="rightbar-overlay"></div>
-
     <!-- JAVASCRIPT -->
     <script src="assets/libs/jquery/jquery.min.js"></script>
     <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
