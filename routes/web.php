@@ -36,4 +36,6 @@ Route::get('/landing', [App\Http\Controllers\KomentarController::class, 'landing
 
 Route::get('/informasi', [App\Http\Controllers\InformasiController::class, 'informasi'])->name('informasi');
 
+Route::get('/data', [App\Http\Controllers\KomentarController::class, 'data'])->name('data');
+
 Route::post('/add',[InformasiController::class, 'add'])->name('add');

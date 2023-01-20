@@ -10,7 +10,8 @@ use function GuzzleHttp\Promise\all;
 class KomentarController extends Controller
 {
     public function index(){
-        return view('landing');
+
+
     }
 
     public function tambah(Request $request){
@@ -32,5 +33,10 @@ class KomentarController extends Controller
 
     public function landing(){
         return view('landing');
+    }
+
+    public function data(){
+        $datakomen = Komentar::all();
+        return view('data',compact('datakomen'));
     }
 }
