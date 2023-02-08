@@ -19,24 +19,19 @@
         <thead style="">
             <tr>
                 <th>No</th>
-                <th>Data Informasi</th>
                 <th>Komentar</th>
                 <th>Dibuat</th>
-                <th>Aksi</th>
             </tr>
         </thead>
         <tbody>
             @php
             $no = 1;
             @endphp
-            @foreach ($datakomen as $item)
+            @foreach ($dinfo as $item)
                <tr>
                 <td>{{ $no++ }}</td>  
-                <td>{{ $item -> email}}</td>
-                <td>{{ $item -> kometar }}</td>  
-                <td>{{ $item -> created_at -> diffForHumans()}}</td>
-                <td><button>delete</button></td>     
-                <td><button>update</button></td>     
+                <td>{{ $item -> data_informasi }}</td>  
+                <td>{{ $item -> created_at -> diffForHumans()}}</td>        
             </tr> 
             @endforeach
         </tbody>

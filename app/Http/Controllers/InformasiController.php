@@ -11,6 +11,11 @@ class InformasiController extends Controller
         return view('informasi');
     }
 
+    public function data_info(){
+        $dinfo = Informasi::all();
+        return view('data_info', compact('dinfo'));
+    }
+
     public function add(Request $request){
         Informasi::create($request->all());
         return redirect()->route('informasi');
