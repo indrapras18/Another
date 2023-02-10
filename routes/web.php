@@ -20,24 +20,27 @@ Route::get('/', function () {
     return view('landing');
 });
 
-Route::post('/tambah',[KomentarController::class, 'tambah'])->name('tambah');
+Route::middleware(['auth'])->group(function(){
+    Route::post('/tambah',[KomentarController::class, 'tambah'])->name('tambah');
+
+    Route::get('/info', [App\Http\Controllers\KomentarController::class, 'info'])->name('info');
+
+    Route::get('/dashboard', [App\Http\Controllers\KomentarController::class, 'dashboard'])->name('dashboard');
+
+    Route::get('/features', [App\Http\Controllers\KomentarController::class, 'features'])->name('features');
+
+    Route::get('/landing', [App\Http\Controllers\KomentarController::class, 'landing'])->name('landing');
+
+    Route::get('/informasi', [App\Http\Controllers\InformasiController::class, 'informasi'])->name('informasi');
+
+    Route::get('/data_info', [App\Http\Controllers\InformasiController::class, 'data_info'])->name('data_info');
+
+    Route::get('/data', [App\Http\Controllers\KomentarController::class, 'data'])->name('data');
+
+    Route::post('/add',[InformasiController::class, 'add'])->name('add');
+
+});
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Route::get('/info', [App\Http\Controllers\KomentarController::class, 'info'])->name('info');
-
-Route::get('/dashboard', [App\Http\Controllers\KomentarController::class, 'dashboard'])->name('dashboard');
-
-Route::get('/features', [App\Http\Controllers\KomentarController::class, 'features'])->name('features');
-
-Route::get('/landing', [App\Http\Controllers\KomentarController::class, 'landing'])->name('landing');
-
-Route::get('/informasi', [App\Http\Controllers\InformasiController::class, 'informasi'])->name('informasi');
-
-Route::get('/data_info', [App\Http\Controllers\InformasiController::class, 'data_info'])->name('data_info');
-
-Route::get('/data', [App\Http\Controllers\KomentarController::class, 'data'])->name('data');
-
-Route::post('/add',[InformasiController::class, 'add'])->name('add');

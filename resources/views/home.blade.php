@@ -104,6 +104,7 @@
                         </div>
                         <div class="container mt-5">
                             <p>Admin : {{ Auth::user()->email }}</p>
+                            {{ session()->get('success') }}
                           </div>
                     </div>
                     <!-- end row -->

@@ -7,7 +7,7 @@
 <body>
 <nav>
     <div class="wrapper">
-        <div class="logo"><a href="">Another Web.</a></div>
+        <div class="logo"><a href="">Another Web</a></div>
         <div class="menu">
             <ul>
                 <li><a href="#home">Home</a></li>
