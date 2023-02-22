@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\InformasiController;
 use App\Models\Informasi;
+use Illuminate\Routing\RouteAction;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,13 +22,8 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth'])->group(function(){
-    Route::post('/tambah',[KomentarController::class, 'tambah'])->name('tambah');
-
-    Route::get('/info', [App\Http\Controllers\KomentarController::class, 'info'])->name('info');
 
     Route::get('/dashboard', [App\Http\Controllers\KomentarController::class, 'dashboard'])->name('dashboard');
-
-    Route::get('/features', [App\Http\Controllers\KomentarController::class, 'features'])->name('features');
 
     Route::get('/landing', [App\Http\Controllers\KomentarController::class, 'landing'])->name('landing');
 
@@ -42,5 +38,10 @@ Route::middleware(['auth'])->group(function(){
 });
 
 Auth::routes();
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/info', [App\Http\Controllers\KomentarController::class, 'info'])->name('info');
+
+Route::get('/features', [App\Http\Controllers\KomentarController::class, 'features'])->name('features');
+
+Route::post('/tambah',[KomentarController::class, 'tambah'])->name('tambah');

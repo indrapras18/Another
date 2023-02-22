@@ -55,9 +55,9 @@
         <form action="/tambah" method="POST">
             @csrf
             <label for="">Email</label><br>
-            <input type="email" name="email" id="" placeholder="input your email here"><br>
+            <input type="email" name="email" id="" placeholder="input your email here" required><br>
             <label for="">Coment</label><br>
-            <textarea name="kometar" placeholder="input your coment here"></textarea><br>
+            <textarea name="kometar" placeholder="input your coment here" required></textarea><br>
             <button type="submit">Post</button>
         </form>
     </section>
